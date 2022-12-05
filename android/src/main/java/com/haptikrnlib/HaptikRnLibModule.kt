@@ -95,7 +95,7 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
       }
   }
 
-@ReactMethod
+  @ReactMethod
   fun HaptikSDKinit() {
     val context = reactApplicationContext
     HaptikSDK.init(context, initData)
@@ -103,6 +103,13 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
     if(isLaunchMessage==true) { HaptikSDK.setLaunchMessage(msg) }
     if(!isCustomSignup) { HaptikSDK.loadGuestConversation() }
     else { HaptikSDK.loadConversation(signupData) }
+  }
+
+  @ReactMethod
+  fun updateUserData(json : String)
+  {
+    val userdata = JSONObject(json)
+    HaptikSDK.updateUserData(userdata)
   }
 
   @ReactMethod
