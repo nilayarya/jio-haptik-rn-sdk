@@ -1,7 +1,7 @@
 import {NativeModules} from 'react-native';
 
 function showSDK () {
-   return NativeModules.HaptikRnLib.navigateToExample();
+   return NativeModules.HaptikRnLib.HaptikSDKinit();
 }
 
 module.exports = showSDK

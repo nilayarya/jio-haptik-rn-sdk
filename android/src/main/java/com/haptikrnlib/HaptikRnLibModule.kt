@@ -7,6 +7,7 @@ import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 import org.json.JSONObject
 
 
@@ -17,10 +18,13 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
     return "HaptikRnLib"
   }
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-
   val initData = InitData()
+
+  @ReactMethod
+  fun setAllInitData(obj : ReadableMap) {
+    setLaunchMessage(obj.getString("setLaunchMessage").toString())
+    initData.hideComposer = obj.getBoolean("hideComposer")
+  }
 
   @ReactMethod
   fun setprimaryColor(col_ : String){
@@ -117,6 +121,7 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
     val context = reactApplicationContext
     HaptikSDK.logout(context)
   }
+
 }
 
 

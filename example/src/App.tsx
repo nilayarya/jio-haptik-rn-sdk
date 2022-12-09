@@ -10,6 +10,10 @@
  import type {Node} from 'react'; 
  import {SafeAreaView, StyleSheet, View, Button} from 'react-native';
  import {NativeModules} from 'react-native';
+
+ import {HaptikSDK,InitData} from  "test-haptik-lib" ;
+ import {dummy} from  "test-haptik-lib" ;
+ 
  /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
   * LTI update could not be added via codemod */
 
@@ -26,17 +30,24 @@
  NativeModules.HaptikRnLib.setLaunchMessage("this is from js side. HI");
  NativeModules.HaptikRnLib.setSignupData("XYZ","34345","uber");*/
 
+ /*<Button onPress={() => NativeModules.HaptikRnLib.HaptikSDKinit()} title="Start native activity" />*/
 
 
  const App: () => Node = () => {
    const backgroundStyle = {
      backgroundColor: 'white',
    };
- 
+   
+   InitData data = new InitData();
+   data.sethideComposer(true);
+
+   HaptikSDK SDK = new HaptikSDK();
+   SDK.init(data);
+
    return (
      <SafeAreaView style={backgroundStyle}>
        <View style={styles.buttonContainer}>
-         <Button onPress={() => NativeModules.HaptikRnLib.HaptikSDKinit()} title="Start native activity" />
+          <Button onPress={() => SDK.loadGuestConversation()} title="Start native activity" />
        </View>
      </SafeAreaView>
    );
