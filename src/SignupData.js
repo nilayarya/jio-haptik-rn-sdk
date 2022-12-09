@@ -1,25 +1,21 @@
-class SignupData{
+export default class SignupData {
+  constructor() {
+    this.data = {};
+  }
 
-    var data = {};
+  setauthCode(code) {
+    this.data.authCode = code;
+  }
 
-    function setauthCode(code) 
-    {
-        data.authCode = code;
-    }
+  setauthId(code) {
+    this.data.authId = code;
+  }
 
-    function setauthId(code) 
-    {
-        data.authId = code;
-    }
+  signupType(type) {
+    this.data.signupType = type;
+  }
 
-    function signupType(type) 
-    {
-        data.signupType = type;
-    }
-
-    function getData()
-    {
-        return data;
-    }
-
+  getData() {
+    return this.data;
+  }
 }

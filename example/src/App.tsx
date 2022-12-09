@@ -7,12 +7,12 @@
  */
 
  import React from 'react';
- import type {Node} from 'react'; 
+//  import type {Node} from 'react'; 
  import {SafeAreaView, StyleSheet, View, Button} from 'react-native';
  import {NativeModules} from 'react-native';
 
- import {HaptikSDK,InitData} from  "test-haptik-lib" ;
- import {dummy} from  "test-haptik-lib" ;
+ import {HaptikSDK, InitData} from  "react-native-haptik-rn-lib" ;
+ import {dummy} from  "react-native-haptik-rn-lib" ;
  
  /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
   * LTI update could not be added via codemod */

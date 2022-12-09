@@ -1,50 +1,41 @@
-class InitData {
+export default class InitData {
+  constructor() {
+    this.data = {};
+  }
 
-    var data = {};
+  setPrimaryColor(color) {
+    this.data.primaryColor = color;
+  }
 
-    function setPrimaryColor(color) 
-    {
-        data.primaryColor = color;
-    }
+  setenableTypingSuggestion(flag) {
+    this.data.enableTypingSuggestion = flag;
+  }
 
-    function setenableTypingSuggestion(flag) 
-    {
-        data.enableTypingSuggestion = flag;
-    }
+  sethideComposer(flag) {
+    this.data.hideComposer = flag;
+  }
 
-    function sethideComposer(flag) 
-    {
-        data.hideComposer = flag;
-    }
+  setnoHeader(flag) {
+    this.data.noHeader = flag;
+  }
 
-    function setnoHeader(flag) 
-    {
-        data.noHeader = flag;
-    }
+  setprivacyPolicyUrl(url) {
+    this.data.privacyPolicyUrl = url;
+  }
 
-    function setprivacyPolicyUrl(url) 
-    {
-        data.privacyPolicyUrl = url;
-    }
+  setinitializeLanguage(lng) {
+    this.data.initializeLanguage = lng;
+  }
 
-    function setinitializeLanguage(lng) 
-    {
-        data.initializeLanguage= lng;
-    }
+  setcomposerPlaceholder(placeholder) {
+    this.data.composerPlaceholder = placeholder;
+  }
 
-    function setcomposerPlaceholder(placeholder) 
-    {
-        data.composerPlaceholder = placeholder;
-    }
+  setcustomCss(custom) {
+    this.data.customCss = custom;
+  }
 
-    function setcustomCss(custom)
-    {
-        data.customCss = custom;
-    }
-
-    function getData()
-    {
-        return data;
-    }
-
+  getData() {
+    return this.data;
+  }
 }

@@ -1,16 +1,18 @@
+import { NativeModules } from 'react-native';
 
-class HaptikSDK {
+export default class HaptikSDK {
+  constructor() {}
 
-    function init(InitData data) {
-        NativeModules.HaptikRnLib.setAllInitData(data.getData());
-    }
+  init(data) {
+    NativeModules.HaptikRnLib.setAllInitData(data.getData());
+  }
 
-    function loadGuestConversation() {
-        NativeModules.HaptikRnLib.HaptikSDKinit()
-    }
+  loadGuestConversation() {
+    NativeModules.HaptikRnLib.HaptikSDKinit();
+  }
 
-    function loadConversation(SignupData data) { 
-        NativeModules.HaptikRnLib.setSignupData(data.getData())
-        NativeModules.HaptikRnLib.HaptikSDKinit()
-    }
+  loadConversation(data) {
+    NativeModules.HaptikRnLib.setSignupData(data.getData());
+    NativeModules.HaptikRnLib.HaptikSDKinit();
+  }
 }
