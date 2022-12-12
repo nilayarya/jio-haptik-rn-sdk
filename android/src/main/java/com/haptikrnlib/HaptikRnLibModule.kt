@@ -22,60 +22,15 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
 
   @ReactMethod
   fun setAllInitData(obj : ReadableMap) {
-    setLaunchMessage(obj.getString("setLaunchMessage").toString())
-    initData.hideComposer = obj.getBoolean("hideComposer")
+    if(obj.hasKey("primaryColor")) initData.primaryColor = obj.getString("primaryColor").toString()
+    if(obj.hasKey("enableTypingSuggestions")) initData.enableTypingSuggestions = obj.getBoolean("enableTypingSuggestions")
+    if(obj.hasKey("hideComposer")) initData.hideComposer = obj.getBoolean("hideComposer")
+    if(obj.hasKey("noHeader")) initData.noHeader = obj.getBoolean("noHeader")
+    if(obj.hasKey("privacyPolicyUrl")) initData.privacyPolicyUrl = obj.getString("privacyPolicyUrl").toString();
+    if(obj.hasKey("initializeLanguage")) initData.initializeLanguage = obj.getString("initializeLanguage").toString();
+    if(obj.hasKey("composerPlaceholder")) initData.composerPlaceholder = obj.getString("composerPlaceholder").toString();
+    if(obj.hasKey("customCss")) initData.customCss = obj.getString("customCss").toString();
   }
-
-  @ReactMethod
-  fun setprimaryColor(col_ : String){
-    initData.primaryColor = col_
-  }
-
-  @ReactMethod
-  fun setenableTypingSuggestion(flag : Boolean){
-    initData.enableTypingSuggestions = flag
-  }
-
-  @ReactMethod
-  fun sethideComposer(flag : Boolean){
-    initData.hideComposer = flag
-  }
-
-  @ReactMethod
-  fun setnoHeader(flag : Boolean){
-    initData.noHeader = flag
-  }
-
-  @ReactMethod
-  fun setprivacyPolicyUrl(link_ : String){
-    initData.privacyPolicyUrl = link_
-  }
-
-  @ReactMethod
-  fun setinitializeLanguage(lng_ : String){
-    initData.initializeLanguage = lng_
-  }
-
-  @ReactMethod
-  fun setcomposerPlaceholder(plcholder_ : String){
-    initData.composerPlaceholder = plcholder_
-  }
-
-  @ReactMethod
-  fun setcustomCss(link_ : String){
-    initData.customCss = link_
-  }
-
-  @ReactMethod
-  fun setdefaultInitdata() {
-    initData.primaryColor = "#420420"
-    initData.enableTypingSuggestions = true
-    initData.hideComposer = true
-    initData.noHeader = true
-    initData.initializeLanguage = "en"
-    initData.composerPlaceholder = "Type Message...."
-  }
-
 
   var isLaunchMessage = false;
   var msg = "";
@@ -88,11 +43,11 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
   var isCustomSignup = false
   val signupData = SignupData()
   @ReactMethod
-  fun setSignupData(authCode_ : String, authId_ : String, signupType_ : String) {
+  fun setSignupData(obj : ReadableMap) {
       isCustomSignup = true
-      signupData.authCode = authCode_
-      signupData.authId = authId_
-      signupData.signupType = signupType_
+      signupData.authCode = obj.getString("authCode").toString()
+      signupData.authId = obj.getString("authId").toString()
+      signupData.signupType = obj.getString("signupType").toString()
       signupData.customData = JSONObject().apply {
         put("custom-data-one", "date-one")
         put("custom-data-two", "data-two")
@@ -108,14 +63,7 @@ class HaptikRnLibModule(reactContext: ReactApplicationContext) :
     if(!isCustomSignup) { HaptikSDK.loadGuestConversation() }
     else { HaptikSDK.loadConversation(signupData) }
   }
-
-  @ReactMethod
-  fun updateUserData(json : String)
-  {
-    val userdata = JSONObject(json)
-    HaptikSDK.updateUserData(userdata)
-  }
-
+  
   @ReactMethod
   fun HaptikSDKlogout() {
     val context = reactApplicationContext

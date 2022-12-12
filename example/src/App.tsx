@@ -11,8 +11,8 @@
  import {SafeAreaView, StyleSheet, View, Button} from 'react-native';
  import {NativeModules} from 'react-native';
 
- import {HaptikSDK, InitData} from  "react-native-haptik-rn-lib" ;
- import {dummy} from  "react-native-haptik-rn-lib" ;
+ import {InitData,HaptikSDK} from  "react-native-haptik-rn-lib" ;
+
  
  /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
   * LTI update could not be added via codemod */
@@ -37,11 +37,12 @@
    const backgroundStyle = {
      backgroundColor: 'white',
    };
-   
-   InitData data = new InitData();
+
+   let data = new InitData();
+
    data.sethideComposer(true);
 
-   HaptikSDK SDK = new HaptikSDK();
+   let SDK = new HaptikSDK();
    SDK.init(data);
 
    return (
