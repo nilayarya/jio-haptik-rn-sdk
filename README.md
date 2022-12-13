@@ -85,6 +85,13 @@ signupdata.setsignupType("third_party")
 SDK.loadConversation(signupdata)
 ```
 
+
+## Steps the republish package
+1) In the package directory type the command `npm init` to initialize the package.json file.
+2) Enter values for all the prompts.
+3) Create an npm account on npmjs.com and type the command `npm login` and login with your credentials.
+4) `npm publish`
+
 ## Contributing
 
 Contributions can only be made via invite.
