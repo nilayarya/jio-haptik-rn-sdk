@@ -1,6 +1,6 @@
 import { NativeModules } from 'react-native';
 
-export default class HaptikSDK {
+class HaptikSDK {
   constructor() {}
 
   init(data) {
@@ -16,3 +16,5 @@ export default class HaptikSDK {
     NativeModules.HaptikRnLib.HaptikSDKinit();
   }
 }
+
+export {HaptikSDK};

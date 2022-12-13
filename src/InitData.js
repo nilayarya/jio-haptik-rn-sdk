@@ -1,4 +1,4 @@
-export default class InitData {
+class InitData {
   constructor() {
     this.data = {};
   }
@@ -39,3 +39,5 @@ export default class InitData {
     return this.data;
   }
 }
+
+export {InitData};

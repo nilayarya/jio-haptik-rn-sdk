@@ -10,12 +10,8 @@
 //  import type {Node} from 'react'; 
  import {SafeAreaView, StyleSheet, View, Button} from 'react-native';
  import {NativeModules} from 'react-native';
-
  import {InitData,HaptikSDK} from  "react-native-haptik-rn-lib" ;
 
- 
- /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
-  * LTI update could not be added via codemod */
 
  /*Init all Data Here before starting Bot Activity*/
 
@@ -30,8 +26,6 @@
  NativeModules.HaptikRnLib.setLaunchMessage("this is from js side. HI");
  NativeModules.HaptikRnLib.setSignupData("XYZ","34345","uber");*/
 
- /*<Button onPress={() => NativeModules.HaptikRnLib.HaptikSDKinit()} title="Start native activity" />*/
-
 
  const App: () => Node = () => {
    const backgroundStyle = {
@@ -40,7 +34,8 @@
 
    let data = new InitData();
 
-   data.sethideComposer(true);
+   data.sethideComposer(true)
+   data.setPrimaryColor("#420420")
 
    let SDK = new HaptikSDK();
    SDK.init(data);
