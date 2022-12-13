@@ -7,20 +7,20 @@ The following repo is a library that bridges HaptikSDK to React Native.
 Use the command below to install the package into your project.
 
 ```bash
- npm i haptik-sdk-lib
+npm i haptik-sdk-lib
 ```
 ## Testing
 
 To test the package, clone the repo and run the command
 
 ```bash
- yarn example android
+yarn example android
 ```
 
 ## Usage
 
-```python
- import {InitData,HaptikSDK,SignupData} from  "react-native-haptik-rn-lib"
+```js
+import {InitData,HaptikSDK,SignupData} from  "react-native-haptik-rn-lib"
 ```
 
 The SDK can be configured in a variety of ways to fit in seamlessly with the overall experience of the parent application. While initializing Haptik SDK, you pass the desired customization according to your need.
@@ -45,21 +45,21 @@ The SDK can be configured in a variety of ways to fit in seamlessly with the ove
 
 An example has been shown below
 
-```python
- # Initializes object of type InitData
- let data = new InitData()
+```js
+# Initializes object of type InitData
+let data = new InitData()
 
- # Use the prefix set followed by the name of the setting you would like to change 
- data.setprimaryColor("#420420")
- data.setenableTypingSuggestion(false)
- data.sethideComposer(false)
- data.setnoHeader(true)
- data.setinitializeLanguage("en")
- data.setcomposerPlaceholder("Type Message....")
+# Use the prefix set followed by the name of the setting you would like to change 
+data.setprimaryColor("#420420")
+data.setenableTypingSuggestion(false)
+data.sethideComposer(false)
+data.setnoHeader(true)
+data.setinitializeLanguage("en")
+data.setcomposerPlaceholder("Type Message....")
 
- # Initializes object of type HaptikSDK
- let SDK = new HaptikSDK()
- SDK.init(data)
+# Initializes object of type HaptikSDK
+let SDK = new HaptikSDK()
+SDK.init(data)
 ```
 
 #### User authentication
@@ -68,23 +68,22 @@ An example has been shown below
 
 SDK creates a new user, without any specific details.
 
-```python
- SDK.loadGuestConversation()
+```js
+SDK.loadGuestConversation()
 ```
 
 ##### Custom signup
 
 For cases when the client/parent application already has a signup flow in place and wants to link the same user to the SDK. Prepare SignupData object with required data and pass it to Haptik SDK.
 
-```python
- let signupdata = new SignupData()
- signupdata.setauthCode("YOUR_AUTH_CODE")
- signupdata.setauthId("YOUR_AUTH_ID")
- signupdata.setsignupType("third_party")
+```js
+let signupdata = new SignupData()
+signupdata.setauthCode("YOUR_AUTH_CODE")
+signupdata.setauthId("YOUR_AUTH_ID")
+signupdata.setsignupType("third_party")
 
- SDK.loadConversation(signupdata)
+SDK.loadConversation(signupdata)
 ```
-
 
 ## Contributing
 
