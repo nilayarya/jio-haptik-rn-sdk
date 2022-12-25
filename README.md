@@ -21,7 +21,6 @@ yarn example android
 
 ## Usage
 
-<<<<<<< HEAD
 ```python
 import foobar
 
@@ -35,11 +34,6 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
-## Contributing
-
-Contributions can only be made via invite.
-Email : nilay2014@gmail.com
-=======
 ```js
 import {InitData,HaptikSDK,SignupData} from  "react-native-haptik-rn-lib"
 ```
