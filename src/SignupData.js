@@ -11,7 +11,7 @@ export default class SignupData {
     this.data.authId = code;
   }
 
-  signupType(type) {
+  setsignupType(type) {
     this.data.signupType = type;
   }
 
