@@ -2,11 +2,8 @@
 
 The following repo is a library that bridges HaptikSDK to React Native.
 
-<<<<<<< HEAD
-=======
 <img src="https://user-images.githubusercontent.com/84241885/198878080-ae7d32b2-4854-4734-a6b5-0f1d63e65944.jpeg" width="200">      <img src="https://user-images.githubusercontent.com/84241885/198878089-e46574c3-882d-47d9-a4a9-bcdb040a8875.jpeg" width = "200">
 
->>>>>>> b33b530d49a757793cd93f2188d63e28df4679b4
 ## Installation
 
 Use the command below to install the package into your project.
@@ -118,7 +115,6 @@ SDK.loadConversation(signupdata)
 ## Contributing
 
 Contributions can only be made via invite.
->>>>>>> b33b530d49a757793cd93f2188d63e28df4679b4
 
 ## License
 
